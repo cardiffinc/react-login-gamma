@@ -25,7 +25,7 @@ function Home() {
                 Logout
             </Button>
             <div className='homeFooter'>
-                UI designed by <a href="https://dribbble.com/shots/15468484-Edupark-Login-Logo" target="_blank" rel="noreferrer">Ali Atalay Sencan</a>. React Template by <a href="https://github.com/cardiffinc" target="_blank" rel="noreferrer">sjoshuadarth</a>. 
+                UI designed by <a href="https://dribbble.com/shots/14019613-Sign-up-form" target="_blank" rel="noreferrer">Pieter-Pleun Korevaar</a>. React Template by <a href="https://github.com/cardiffinc" target="_blank" rel="noreferrer">sjoshuadarth</a>. 
             </div>
         </div>
     )

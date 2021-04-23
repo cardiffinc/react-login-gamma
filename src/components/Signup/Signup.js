@@ -1,63 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import artwork from '../../staticAssets/login-artwork.jpg';
-import { Button, Checkbox, Divider, FormControlLabel } from '@material-ui/core';
+import { Button, Checkbox, Container, Divider, FormControlLabel } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import { useHistory } from 'react-router';
 import './styles.css'
-import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import StyledTextInput from '../StyledTextInput/StylesTextInput';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         display: 'flex',
-    },
-    leftDiv: {
-        border: 'none',
-        height: '100vh',
-        backgroundImage: `url(${artwork})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
-    },
-    rightDiv: {
-        margin: '5em',
-        marginRight: '10em'
-    },
-    socialGrid: {
-        marginTop: 20,
-        marginBottom: 20
+        margin: 0
     },
     authInput: {
         marginTop: 15,
     },
     checkFormControlLabel: {
-        marginTop: 25,
-        margin: '0 5em',
+        marginTop: 15,
         width: 'fit-content',
-        display: 'block'
+        display: 'block',
+        marginRight: 0,
+        marginLeft: 0
     },
     checkbox: {
         paddingLeft: 0
     },
-    buttonGrid: {
-        marginTop: 10,
-    },
     authButtonBG: {
+        marginTop: 10,
         width: '-webkit-fill-available',
         textTransform: 'none',
-        background: 'linear-gradient(to right, #5da4fa, #529afd, #4c8fff, #4c83ff, #5276fe, #5c72fd, #656efc, #6e6afa, #7670fa, #7e75fb, #867bfb, #8d81fb)',
-        '&$disabled': {
-            color: '#ff0000'
-        }
-    },
-    divider: {
-        marginTop: 25,
-        marginBottom: 25,
+        borderRadius: 12
     },
     heading: {
-        color: theme.palette.primary
+        marginTop: 5,
+        color: theme.palette.primary,
+        marginBottom: 10
     },
     error: {
         color: '#ff4747'
@@ -65,29 +43,16 @@ const useStyles = makeStyles((theme) => ({
     errorIcon: {
         verticalAlign: 'middle'
     },
-    leftInnerSquare: {
-        height: '60vh',
-        width: '40%',
-        margin: '0 auto',
-        top: '20vh',
-        left: '5vw',
-        position: 'fixed',
-        borderRadius: 2,
-        backdropFilter: 'blur(5px)',
-        backgroundColor: '#ffffff26',
-    },
-    artTextHolder: {
-        margin: '5em'
-    },
-    artSubtitleHolder: {
-        marginTop: 25
-    },
     inputWrapper: {
         marginTop: 25
     },
-    large:{
-        width: theme.spacing(7),
-        height: theme.spacing(7),
+    containerForm: {
+        maxWidth: '30vw',
+        padding: '3em',
+        margin: '10vw auto',
+        background: '#fff',
+        textAlign: 'center',
+        borderRadius: 20
     }
 }));
 
@@ -177,29 +142,11 @@ function Signup() {
 
     return (
         <div className={classes.root}>
-            <Grid container alignItems="center">
-                <Grid item xs={6}>
-                    <div className={classes.leftDiv}>
-                        <div className={classes.leftInnerSquare}>
-                            <div className={classes.artTextHolder}>
-                                <span className="art-text">▷ Digital</span>
-                                <span className="art-text">Platform</span>
-                                <span className="art-text">for distance</span>
-                                <span className="art-text primary-theme-color">learning.</span>
-                                <div className={classes.artSubtitleHolder}>
-                                    <span className="art-subtitle">You will never know everything.</span>
-                                    <span className="art-subtitle">But you will know more.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Grid>
-                <Grid item xs={6}>
-                    <div className={classes.rightDiv}>
-                        <h1 className={classes.heading}>
-                            Hey, Welcome! 🙋‍♂️
+            <Container className={classes.containerForm} center>
+            <h1 className={classes.heading}>
+                            Create Account
                         </h1>
-                        <span>Signup using your email and password.</span>
+                        <span>Already have an account? <Link to='/login'>Sign in</Link></span>
 
                         <form onSubmit={handleSignup}>
                             <div className={classes.inputWrapper}>
@@ -213,7 +160,22 @@ function Signup() {
                                     {...configPasswordInput}
                                     handleChange={event => setPassword(event.target.value)} />
                             </div>
-                            <FormControlLabel
+                            {error &&
+                                <p className={classes.error}><ErrorOutlineIcon className={classes.errorIcon} /> {error}
+                                </p>}
+                                <Button
+                                        fullWidth
+                                        id="signup-button"
+                                        variant="contained"
+                                        size="large"
+                                        color="primary"
+                                        className={classes.authButtonBG}
+                                        type="submit"
+                                        style={{ color: '#fff' }}
+                                        disabled={disableButton}>
+                                        Sign Up
+                                    </Button>
+                                    <FormControlLabel
                                 control={
                                     <Checkbox
                                         name="checkedB"
@@ -222,47 +184,11 @@ function Signup() {
                                         onClick={event => event.target.checked ? setPolicy(true) : setPolicy(false)}
                                     />
                                 }
-                                label="I agree to the Terms and Privacy Conditions"
-                                className='art-checkbox-label-signup text-gradient'
+                                label="I have read and agreed to the Terms of Service"
+                                className={classes.checkFormControlLabel}
                             />
-                            {error &&
-                                <p className={classes.error}><ErrorOutlineIcon className={classes.errorIcon} /> {error}
-                                </p>}
-                            <Grid container alignItems="center" spacing={2} className={classes.buttonGrid}>
-                                <Grid item xs={6}>
-                                    <Button
-                                        fullWidth
-                                        id="signup-button"
-                                        variant="contained"
-                                        size="large"
-                                        color="secondary"
-                                        className={classes.authButtonBG}
-                                        type="submit"
-                                        style={{ color: '#fff' }}
-                                        disabled={disableButton}>
-                                        Sign Up
-                                    </Button>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <Button
-                                        fullWidth
-                                        id="signin-button"
-                                        variant="outlined"
-                                        size="large"
-                                        color="secondary"
-                                        className={classes.authButton}
-                                        type="button"
-                                        onClick={() => history.push('/login')}>
-                                        Sign In
-                                    </Button>
-                                </Grid>
-                            </Grid>
                         </form>
-                        <Divider className={classes.divider} />
-                        <GoogleSignIn/>
-                    </div>
-                </Grid>
-            </Grid>
+            </Container>
         </div>
     );
 }

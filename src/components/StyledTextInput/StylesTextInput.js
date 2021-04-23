@@ -13,15 +13,13 @@ function StyledTextInput({handleChange, id, label, type}) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-        <InputLabel shrink htmlFor={id}>
-          {label}
-        </InputLabel>
         <TextField 
             id={id} 
             type={type}
             variant="outlined" 
             fullWidth 
             color='secondary'
+            label={label}
             className={classes.authInput} 
             onChange={handleChange}/>
         </div>
