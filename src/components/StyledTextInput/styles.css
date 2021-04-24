@@ -6,7 +6,11 @@
   .MuiInputLabel-outlined.MuiInputLabel-shrink{
     display: none!important;
   }
-  
-  .PrivateNotchedOutline-legendLabelled-17 > span {
+
+  .MuiOutlinedInput-root legend {
     display: none!important;
+  }
+
+  .MuiOutlinedInput-root fieldset{
+    top: 0!important;
   }
