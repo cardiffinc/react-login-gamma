@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,3 +9,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Custom styling of text field to have even rounder edges */
+.MuiOutlinedInput-root {
+  border-radius: 12px!important;
+}
+/* Custom styling of text field to hide label on focus */
+.MuiInputLabel-outlined.MuiInputLabel-shrink{
+  display: none!important;
+}
+
+.PrivateNotchedOutline-legendLabelled-17 > span {
+  display: none!important;
+}
+

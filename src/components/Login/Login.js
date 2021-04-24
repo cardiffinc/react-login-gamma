@@ -51,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
         background: '#fff',
         textAlign: 'center',
         borderRadius: 20
+    },
+    addonGrid: {
+        textAlign: 'start',
+        paddingLeft: 10,
     }
 }));
 
@@ -120,7 +124,7 @@ function Login() {
                             <div className={classes.formInputContentHolder}>
                                 <StyledTextInput {...configEmailInput} handleChange={event => setEmail(event.target.value)} />
                                 <StyledTextInput {...configPasswordInput} handleChange={event => setPassword(event.target.value)} />
-                                <Grid container alignItems="center">
+                                <Grid container alignItems="center" className={classes.addonGrid}>
                                 <Grid item xs={6}>
                                     <FormControlLabel
                                         control={

@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import './styles.css'
 import StyledTextInput from '../StyledTextInput/StylesTextInput';
 import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -171,6 +172,7 @@ function Signup() {
                                         color="primary"
                                         className={classes.authButtonBG}
                                         type="submit"
+                                        endIcon={<ArrowForwardIcon/>}
                                         style={{ color: '#fff' }}
                                         disabled={disableButton}>
                                         Sign Up

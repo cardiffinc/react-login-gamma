@@ -20,6 +20,7 @@ function StyledTextInput({handleChange, id, label, type}) {
             fullWidth 
             color='secondary'
             label={label}
+            hiddenLabel={true}
             className={classes.authInput} 
             onChange={handleChange}/>
         </div>

@@ -3,3 +3,9 @@
     box-shadow: none!important;
     background: rgba(0, 0, 0, 0.12)!important;
 }
+
+.MuiButton-endIcon {
+    margin-right: 10px!important;
+    position: absolute!important;
+    right: 0!important;
+}
