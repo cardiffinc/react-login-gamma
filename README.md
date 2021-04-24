@@ -1,6 +1,6 @@
 # React Login and Registration Template #2
 
-This project was derived from the [ui-mockup](https://dribbble.com/shots/15468484-Edupark-Login-Logo) designed by Ali Atalay Sencan on Dribbble. 
+This project was derived from the [ui-mockup](https://dribbble.com/shots/14019613-Sign-up-form) designed by Pieter-Pleun Korevaar on Dribbble. 
 
 ## Tech Stack
 
@@ -10,7 +10,7 @@ This project was derived from the [ui-mockup](https://dribbble.com/shots/1546848
 - React Hooks
 
 ## Demo
-- the frontend and a simple auth setup is deployed as a [demo](https://sjoshuadarth-react-login-beta.netlify.app). 
+- the frontend and a simple auth setup is deployed as a [demo](https://sjoshuadarth-react-login-gamma.netlify.app). 
 
 ## Develop
 - Feel free to use or adapt the project. You can locally test out by following the below instruction(s). 
