@@ -1,4 +1,4 @@
-# React Login and Registration Template #2
+# React Login and Registration Template #3
 
 This project was derived from the [ui-mockup](https://dribbble.com/shots/14019613-Sign-up-form) designed by Pieter-Pleun Korevaar on Dribbble. 
 
