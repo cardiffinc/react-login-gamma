@@ -1,0 +1,12 @@
+/* Custom styling of text field to have even rounder edges */
+.MuiOutlinedInput-root {
+    border-radius: 12px!important;
+  }
+  /* Custom styling of text field to hide label on focus */
+  .MuiInputLabel-outlined.MuiInputLabel-shrink{
+    display: none!important;
+  }
+  
+  .PrivateNotchedOutline-legendLabelled-17 > span {
+    display: none!important;
+  }

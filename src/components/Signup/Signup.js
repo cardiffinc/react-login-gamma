@@ -186,7 +186,7 @@ function Signup() {
                                         onClick={event => event.target.checked ? setPolicy(true) : setPolicy(false)}
                                     />
                                 }
-                                label="I have read and agreed to the Terms of Service"
+                                label={<span>I have read and agreed to the <Link>Terms of Service</Link></span>}
                                 className={classes.checkFormControlLabel}
                             />
                         </form>
